@@ -1,0 +1,22 @@
+{
+  "name": "task-reminder",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@cloudbase/js-sdk": "^3.3.10",
+    "dayjs": "^1.11.10",
+    "tdesign-icons-vue-next": "^0.3.0",
+    "tdesign-vue-next": "^1.9.0",
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.4.0"
+  }
+}

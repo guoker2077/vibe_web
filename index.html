@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>重要事务 & 闹钟提醒</title>
+    <style>
+      /* 预加载动画 */
+      #app-loading {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #f0f2f8 0%, #e8f0fe 50%, #f0ebff 100%);
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      #app-loading.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .loader {
+        width: 48px;
+        height: 48px;
+        position: relative;
+      }
+      .loader-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #0052d9;
+        animation: spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      .loader-ring:nth-child(2) {
+        inset: 6px;
+        border-top-color: #7b61ff;
+        animation-duration: 0.8s;
+        animation-direction: reverse;
+      }
+      .loader-ring:nth-child(3) {
+        inset: 12px;
+        border-top-color: #3a7bd5;
+        animation-duration: 1.2s;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app-loading">
+      <div class="loader">
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+      </div>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      // Vue 挂载后移除加载动画
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const el = document.getElementById('app-loading');
+          if (el) {
+            el.classList.add('fade-out');
+            setTimeout(() => el.remove(), 500);
+          }
+        }, 300);
+      });
+    </script>
+  </body>
+</html>
