@@ -38,14 +38,6 @@ npm install
 npm run dev
 ```
 
-## 部署信息
+## 部署
 
-- **CloudBase 环境ID**: testcode1-d6gvr6853406258e0
-- **访问地址**: https://testcode1-d6gvr6853406258e0-1436279534.tcloudbaseapp.com/
-- **区域**: ap-shanghai
-
-### CloudBase 控制台
-
-- 概览: https://tcb.cloud.tencent.com/dev?envId=testcode1-d6gvr6853406258e0#/overview
-- 静态托管: https://tcb.cloud.tencent.com/dev?envId=testcode1-d6gvr6853406258e0#/static-hosting
-- 数据库: https://tcb.cloud.tencent.com/dev?envId=testcode1-d6gvr6853406258e0#/db/doc
+本项目部署在腾讯云 CloudBase 静态托管上，部署时请替换为你自己的环境配置。
